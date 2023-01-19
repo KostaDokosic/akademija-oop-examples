@@ -1,6 +1,13 @@
 <?php
 
-interface StandardKeyboard {
+interface KEyboard {
+
+}
+
+interface StandardKeyboard  {
+
+}
+interface premiumKeyboard {
 
 }
 
@@ -10,8 +17,12 @@ interface PremiumMonitor {
 
 class Windows98Machine {
   public StandardKeyboard $keyboard;
-  public PremiumMonitor $monitor;
+  public Keyboard $monitor;
   //...
+
+  public function setKeyboard($keyboard) {
+    $this->keyboard = $keyboard;
+  }
 
   public function __construct($keyboard, $monitor) {
     $this->keyboard = $keyboard;
@@ -19,5 +30,8 @@ class Windows98Machine {
   }
   // PROBLEM ?
 }
+$premiumKeyboard = new PremiumKeyboard();
+$windows = new Windows98Machine();
 
+$windows->setKeyboard($premiumKeyboard);
 ?>

@@ -2,11 +2,15 @@
 
 interface BearKeeper {
   public function feedTheBear();
-  public function petTheBear();
+  
+}
+interface BearKeeper2 {
+  public function petTheBear(); 
   public function washTheBear();
+  
 }
 
-class BearRarer implements BearKeeper {
+class BearRarer implements BearKeeper, implements BearKeeper2 {
   public function washTheBear() {
 
   }
